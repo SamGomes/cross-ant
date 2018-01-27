@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject displayPanel;
     public GameObject scorePanel;
 
+    public GameObject Spawner;
+
     public string currWord;
     public string currTargetWord;
 
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
             if (currWord.CompareTo(currTargetWord) == 0)
             {
                 score += currTargetWord.Length;
+                antSpawner spawner = Spawner.GetComponent<antSpawner>();
+                spawner.spawnAnt();
                 changeTargetWord();
 
             }
