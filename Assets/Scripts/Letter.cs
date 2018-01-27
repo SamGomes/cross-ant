@@ -5,7 +5,9 @@ using UnityEngine;
 public class Letter : MonoBehaviour {
 
     public float speed;
+    public string letterText;
     private float totalTranslation = 0;
+
 
 	// Use this for initialization
 	void Start () {

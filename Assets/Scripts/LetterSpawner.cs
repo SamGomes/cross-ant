@@ -13,7 +13,7 @@ public class LetterSpawner : MonoBehaviour
     void Start()
     {
         float random = Random.Range(0.5f, 2.5f);
-        InvokeRepeating("spawnLetter", 0.0f, random);
+        InvokeRepeating("spawnLetter", random, random);
     }
 
     void spawnLetter()
@@ -26,6 +26,8 @@ public class LetterSpawner : MonoBehaviour
         string currLetter = letters[random];
 
         string path = "Textures/Alphabet/" + currLetter;
+
+        newLetter.GetComponent<Letter>().letterText = currLetter;
 
         letterRenderer.sprite = (Sprite) Resources.Load(path, typeof(Sprite));
 

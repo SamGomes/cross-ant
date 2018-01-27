@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 43105732}
   - component: {fileID: 43105733}
   - component: {fileID: 43105734}
+  - component: {fileID: 43105735}
   m_Layer: 0
   m_Name: ball2
   m_TagString: Untagged
@@ -197,8 +198,63 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.09, z: 10}
+  m_Size: {x: 1.12, y: 0.3440419, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &43105735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43105731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a877e06e3261b64468c74df1a2523a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 75445754}
+  buttonCode: x
+--- !u!1 &75445754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 75445756}
+  - component: {fileID: 75445755}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &75445755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 75445754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21afa47bcfd54a945882dd613bde021e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currWord: 
+  currTargetWord: 
+--- !u!4 &75445756
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 75445754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.456108, y: 1.6596456, z: 102.15409}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394436543
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +366,7 @@ GameObject:
   - component: {fileID: 686733953}
   - component: {fileID: 686733954}
   - component: {fileID: 686733955}
+  - component: {fileID: 686733956}
   m_Layer: 0
   m_Name: ball4
   m_TagString: Untagged
@@ -384,8 +441,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.09, z: 10}
+  m_Size: {x: 1.12, y: 0.3440419, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &686733956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686733952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a877e06e3261b64468c74df1a2523a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 75445754}
+  buttonCode: v
 --- !u!1 &988367434
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +745,7 @@ GameObject:
   - component: {fileID: 1725084690}
   - component: {fileID: 1725084691}
   - component: {fileID: 1725084692}
+  - component: {fileID: 1725084693}
   m_Layer: 0
   m_Name: ball3
   m_TagString: Untagged
@@ -749,8 +820,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.09, z: 10}
+  m_Size: {x: 1.12, y: 0.3440419, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1725084693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1725084689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a877e06e3261b64468c74df1a2523a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 75445754}
+  buttonCode: c
 --- !u!1 &1865257860
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,8 +1002,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.09, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.12, y: 0.34404188, z: 10}
+  m_Center: {x: 0, y: -0.04517913, z: 0}
 --- !u!54 &1984014001
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -946,3 +1030,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a877e06e3261b64468c74df1a2523a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 75445754}
+  buttonCode: z
