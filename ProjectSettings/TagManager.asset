@@ -15,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Input
+  - Display
   - 
   - 
   - 
@@ -42,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Display
+    uniqueID: 2489682177
+    locked: 0
+  - name: Input
+    uniqueID: 3801038985
     locked: 0
