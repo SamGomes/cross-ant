@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33990675260059016}
   - component: {fileID: 65588886126007684}
   - component: {fileID: 23132529265950562}
+  - component: {fileID: 114942694666621780}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Untagged
@@ -95,3 +96,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114942694666621780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595345409779074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3052b0358abfc794082cc933c77c8860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodObject: {fileID: 0}
+  moundDoor: {fileID: 0}
+  speed: 0
+  isCharged: 0

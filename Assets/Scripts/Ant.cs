@@ -4,61 +4,64 @@ using UnityEngine;
 
 public class Ant : MonoBehaviour
 {
-
-    public GameObject foodObject;
-    public GameObject moundDoor;
+    public GameObject target;
     public float speed;
 
     protected int cargoCapacity;
-    //private
-    public bool isCharged;
+    private bool isLoaded;
 
     // private Vector3 logEntryPosition;
-    private Vector3 myInitialPosition;
 
     private Vector3 moundDoorPosition;
     private Vector3 foodObjectPosition;
+    private Vector3 targetPosition;
     private Vector3 myPosition;
 
-    GameObject ant;
+    private bool canMoove;
 
     // Use this for initialization
     void Start()
     {
-        isCharged = false;
-        ant = gameObject;
-        myInitialPosition = new Vector3(0, 0, 0);
-        gameObject.transform.position = myInitialPosition;
-        moundDoorPosition = moundDoor.transform.position;
-        foodObjectPosition = foodObject.transform.GetChild(0).position;
+        isLoaded = false;
+        canMoove = false;
+        myPosition = new Vector3(0, 0, 0);
+        gameObject.transform.position = myPosition;
+        targetPosition = target.transform.position;
     }
     
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!canMoove)
+        {
+            return;
+        }
+
         myPosition = gameObject.transform.position;
-        Vector3 targetPos = new Vector3(0, 0, 0);
         Vector3 myDirection = new Vector3(0, 0, 0);
 
-        if (!isCharged)
-        {
-            myDirection = foodObjectPosition - myPosition;
-            targetPos = foodObjectPosition;
-        }
-        else
-        {
-            myDirection = moundDoorPosition - myPosition;
-            targetPos = moundDoorPosition;
-        }
+        myDirection = targetPosition - myPosition;
 
         //walk animation play
         Vector3 myVelocity = myDirection.normalized * speed;
 
+        Debug.Log(myVelocity);
         //rotate towards target
-        ant.transform.LookAt(targetPos);
+        gameObject.transform.LookAt(targetPosition);
         //update ant movement
-        ant.transform.position += myVelocity;
+        gameObject.transform.position += myVelocity;
     }
-
+    public bool checkIfLoaded()
+    {
+        return isLoaded;
+    }
+    public void moove()
+    {
+        this.canMoove = true;
+    }
+    public void stop()
+    {
+        this.canMoove = false;
+    }
 
 }
