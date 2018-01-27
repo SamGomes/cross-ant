@@ -27,11 +27,12 @@ public class Ant : MonoBehaviour
     {
         isCharged = false;
         ant = gameObject;
-        myInitialPosition = gameObject.transform.position;
+        myInitialPosition = new Vector3(0, 0, 0);
+        gameObject.transform.position = myInitialPosition;
         moundDoorPosition = moundDoor.transform.position;
         foodObjectPosition = foodObject.transform.GetChild(0).position;
     }
-
+    
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -54,7 +55,7 @@ public class Ant : MonoBehaviour
         Vector3 myVelocity = myDirection.normalized * speed;
 
         //rotate towards target
-        transform.LookAt(targetPos);
+        ant.transform.LookAt(targetPos);
         //update ant movement
         ant.transform.position += myVelocity;
     }
