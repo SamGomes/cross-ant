@@ -17,7 +17,7 @@ public class Button : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetKey(buttonCode))
+		if (Input.GetKey(buttonCode) || Input.GetButton(xboxCode))
         {
             this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             this.clicked = true;
