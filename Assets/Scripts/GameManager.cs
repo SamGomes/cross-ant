@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private int lifes;
     private int score;
-    private string[] targetWords = { "cake", "apple", "orange" };
+    private string[] targetWords = { "CAKE", "PIE", "APPLE" , "PIZZA" , "CROISSANT" , "BANANA" , "DONUT", "CHERRY", "XMASCOOKIES" , "KIWI", "QUICHE", "MANGO", "FISH", "VANILLA", "JELLY" };
 
     // Use this for initialization
     void Start()
@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        resultPanel.GetComponent<UnityEngine.UI.Text>().text = "Curr Word: "+ currWord;
+        resultPanel.GetComponent<UnityEngine.UI.Text>().text = "Word: "+ currWord;
         hpPanel.GetComponent<UnityEngine.UI.Text>().text = "Lifes: "+ lifes;
         scorePanel.GetComponent<UnityEngine.UI.Text>().text = "Score: "+ score;
+
+        currWord = currWord.ToUpper();
 
         if (!currTargetWord.Contains(currWord))
         {

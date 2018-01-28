@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212308749618654160}
   - component: {fileID: 114284790491832860}
   - component: {fileID: 54357305365335432}
-  - component: {fileID: 65005596615408504}
+  - component: {fileID: 135967515287415664}
   m_Layer: 0
   m_Name: Letter
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439335212217198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.788, y: 0.78, z: 100}
+  m_LocalPosition: {x: -3.0994728, y: -3.2871387, z: 95.17232}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,18 +58,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65005596615408504
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1439335212217198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.56, y: 2.56, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114284790491832860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,8 +69,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f685425f7b62b824f9a703cb6e10eac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   letterText: 
+--- !u!135 &135967515287415664
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439335212217198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.21
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212308749618654160
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,16 +6,18 @@ using System.Linq;
 public class LetterSpawner : MonoBehaviour
 {
     public GameObject letterPrefab;
-    public GameObject killTrigger;
+    public float minIntervalRange;
+    public float maxIntervalRange;
 
-    private string[] letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "L", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+
+    public string[] letters; // = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "L", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
     private List<string> lettersPool;
 
     // Use this for initialization
     void Start()
     {
         resetPool();
-        float random = Random.Range(0.5f, 1.0f);
+        float random = Random.Range(minIntervalRange, maxIntervalRange);
         InvokeRepeating("spawnLetter", random, random);
     }
 
