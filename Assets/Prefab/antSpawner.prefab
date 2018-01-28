@@ -78,4 +78,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antPrefab: {fileID: 1191294187309696, guid: ac3e76adff95b4bc2a7e1017f2e43c63, type: 2}
-  QueenAnt: {fileID: 0}
+  QueenAnt: {fileID: 1924659732701386, guid: 8f99c89e50de144699d24b03396638d9, type: 2}
