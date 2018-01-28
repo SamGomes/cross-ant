@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public string currWord;
     public string currTargetWord;
 
-    public float timeLeft;
+    public float timeLeft = 30.0f;
 
 
     private int lives;
@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("decrementTimeLeft", 0.0f, 1.0f);
-
-        timeLeft = 30.0f;
+        Application.targetFrameRate = 60;
+        //timeLeft = 30.0f;
         lives = 3;
 
         DisplayPanel display = displayPanel.GetComponent<DisplayPanel>();
@@ -52,10 +52,13 @@ public class GameManager : MonoBehaviour
 
         if(timeLeft <= 0.0f || lives < 1)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("gameover");
         }
 
-        if (!currTargetWord.Contains(currWord))
+        string cutTargetWord = currTargetWord.Substring(0, currWord.Length);
+
+        if(currWord == ""){ return; }
+        if (!cutTargetWord.Contains(currWord))
         {
             hurt();
         }

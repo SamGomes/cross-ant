@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/crossAnt.unity
     guid: 952d9bc59c3062c45b12ca11acf595ac
+  - enabled: 1
+    path: Assets/gameover.unity
+    guid: b12160f90171cc4459e24c76ebca5fed
