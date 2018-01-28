@@ -39,7 +39,7 @@ public class LetterSpawner : MonoBehaviour
         string path = "Textures/Alphabet/" + currLetter;
 
         newLetter.GetComponent<Letter>().letterText = currLetter;
-        newLetter.GetComponent<Letter>().speed = newLetter.GetComponent<Letter>().speed + ((score + 1) * 0.1f);
+        newLetter.GetComponent<Letter>().speed = newLetter.GetComponent<Letter>().speed + ((score + 1) * 0.05f);
 
         letterRenderer.sprite = (Sprite) Resources.Load(path, typeof(Sprite));
 

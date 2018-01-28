@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 30.0f;
 
 
-    private int lives;
+    public int lives = 4;
     private int score;
     private string[] targetWords = { "CAKE", "PIE", "APPLE" , "PIZZA" , "CROISSANT" , "BANANA" , "DONUT", "CHERRY", "XMASCOOKIES" , "KIWI", "QUICHE", "MANGO", "FISH", "VANILLA", "JELLY" };
 
@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("decrementTimeLeft", 0.0f, 1.0f);
         Application.targetFrameRate = 60;
         //timeLeft = 30.0f;
-        lives = 3;
 
         DisplayPanel display = displayPanel.GetComponent<DisplayPanel>();
         
@@ -74,6 +73,11 @@ public class GameManager : MonoBehaviour
             {
                 score += currTargetWord.Length;
                 timeLeft += currTargetWord.Length*4;
+                GameObject[] letters = GameObject.FindGameObjectsWithTag("letter");
+                foreach (GameObject letter in letters)
+                {
+                    Destroy(letter);
+                }
                 foreach (GameObject LetterSpawner in LetterSpawners)
                 {
                   LetterSpawner.GetComponent<LetterSpawner>().setScore(score);   

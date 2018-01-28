@@ -38,7 +38,7 @@ public class Button : MonoBehaviour {
         if (this.clicked)
         {
             otherObject.gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 1.0f);
-            otherObject.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            otherObject.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
 
             gameManager.GetComponent<GameManager>().currWord+=otherObject.gameObject.GetComponent<Letter>().letterText;
 

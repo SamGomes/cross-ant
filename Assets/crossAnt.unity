@@ -428,6 +428,7 @@ MonoBehaviour:
   currWord: 
   currTargetWord: 
   timeLeft: 120
+  lives: 7
 --- !u!4 &75445756
 Transform:
   m_ObjectHideFlags: 0
@@ -584,7 +585,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.1, y: -115}
+  m_AnchoredPosition: {x: 265.6, y: -158.86093}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198430566
@@ -964,7 +965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.09987, y: -142.8}
+  m_AnchoredPosition: {x: 265.59985, y: -190.16093}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351632915
@@ -1097,7 +1098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.09987, y: -198.5}
+  m_AnchoredPosition: {x: 265.59985, y: -252.96094}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662977696
@@ -1581,8 +1582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letterPrefab: {fileID: 1439335212217198, guid: f31bf636445269449ae7445df9a7599f,
     type: 2}
-  minIntervalRange: 0.3
-  maxIntervalRange: 1.4
+  minIntervalRange: 0.5
+  maxIntervalRange: 1.5
 --- !u!1 &1092891204 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1924659732701386, guid: 8f99c89e50de144699d24b03396638d9,
@@ -1754,8 +1755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letterPrefab: {fileID: 1439335212217198, guid: f31bf636445269449ae7445df9a7599f,
     type: 2}
-  minIntervalRange: 1.3
-  maxIntervalRange: 2.5
+  minIntervalRange: 0.5
+  maxIntervalRange: 1.5
 --- !u!1 &1234651804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,8 +2562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letterPrefab: {fileID: 1439335212217198, guid: f31bf636445269449ae7445df9a7599f,
     type: 2}
-  minIntervalRange: 0.7
-  maxIntervalRange: 1.8
+  minIntervalRange: 0.5
+  maxIntervalRange: 1.5
 --- !u!1 &1822767550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,7 +2823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.09988, y: -170.6}
+  m_AnchoredPosition: {x: 265.59988, y: -223.56094}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1940130932
