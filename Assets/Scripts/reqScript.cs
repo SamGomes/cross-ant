@@ -8,7 +8,6 @@ public class reqScript : MonoBehaviour {
 
 	public void updateRequirement(string word){
 		gameObject.GetComponent<Text>().text = word;
-		var a = 1;
 	}
 
 }

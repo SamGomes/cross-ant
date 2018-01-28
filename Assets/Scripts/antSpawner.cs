@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class antSpawner : MonoBehaviour {
+public class AntSpawner : MonoBehaviour {
 
 	public GameObject antPrefab;
 	public GameObject QueenAnt;
@@ -19,7 +19,7 @@ public class antSpawner : MonoBehaviour {
 
 	public void spawnAnt(string currTargetWord){
         GameObject ant = Instantiate(antPrefab, this.transform.position, Quaternion.identity);
-        ant antScript = ant.GetComponent<ant>();
+        Ant antScript = ant.GetComponent<Ant>();
         Animator queenAnimator  = QueenAnt.GetComponent<Animator>();
         antScript.setQueenAnimator(queenAnimator);
 

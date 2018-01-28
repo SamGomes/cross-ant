@@ -13,10 +13,12 @@ public class StartQuitScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey("v")){
-			Application.Quit();
+            gameObject.GetComponent<AudioSource>().Play();
+            Application.Quit();
 		}
 		else if(Input.GetKey("z")){
-			SceneManager.LoadScene("crossAnt");
+            gameObject.GetComponent<AudioSource>().Play();
+            SceneManager.LoadScene("crossAnt");
 		}
 	}
 }

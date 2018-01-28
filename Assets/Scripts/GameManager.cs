@@ -57,9 +57,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("gameover");
         }
 
-        string cutTargetWord = currTargetWord.Substring(0, currWord.Length);
+        string cutTargetWord = currTargetWord;
+        if(cutTargetWord.Length > currWord.Length)
+        {
+            cutTargetWord = currTargetWord.Substring(0, currWord.Length);
+        }
 
-        if(currWord == ""){ return; }
+        if (currWord == ""){ return; }
         if (!cutTargetWord.Contains(currWord))
         {
             hurt();
@@ -74,7 +78,7 @@ public class GameManager : MonoBehaviour
                 {
                   LetterSpawner.GetComponent<LetterSpawner>().setScore(score);   
                 }
-                antSpawner spawner = Spawner.GetComponent<antSpawner>();
+                AntSpawner spawner = Spawner.GetComponent<AntSpawner>();
                 spawner.spawnAnt(currTargetWord);
                 changeTargetWord();
 
@@ -92,6 +96,7 @@ public class GameManager : MonoBehaviour
         int random = Random.Range(0, targetWords.Length);
         InvokeRepeating("spawnLetter", random, random);
         currTargetWord = targetWords[random];
+        currWord = "";
         displayPanel.GetComponent<DisplayPanel>().setCurrWord(currTargetWord);
         reqPanel.GetComponent<reqScript>().updateRequirement(currTargetWord);
     }

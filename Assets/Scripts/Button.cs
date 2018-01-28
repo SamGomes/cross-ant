@@ -12,18 +12,19 @@ public class Button : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKey(buttonCode))
         {
-            this.gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            this.gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             this.clicked = true;
         }else
         {
             this.clicked = false;
-            this.gameObject.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+            this.gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
         }
 
     }
@@ -40,6 +41,8 @@ public class Button : MonoBehaviour {
             otherObject.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
 
             gameManager.GetComponent<GameManager>().currWord+=otherObject.gameObject.GetComponent<Letter>().letterText;
+
+            gameObject.GetComponent<AudioSource>().Play();
         }
     }
 }

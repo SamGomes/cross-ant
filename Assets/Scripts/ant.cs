@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ant : MonoBehaviour {
+public class Ant : MonoBehaviour {
 
     public GameObject foodProjectile;
     private Sprite foodProjectileSprite;
@@ -31,7 +31,8 @@ public class ant : MonoBehaviour {
         float difference = currenTime - throwingStartTime;
 		if(difference > 4) {
 		  this.animator.SetTrigger("walk");
-		  if(queenAnimator != null) {
+            gameObject.GetComponents<AudioSource>()[1].Play();
+            if (queenAnimator != null) {
 		    queenAnimator.SetTrigger("rest");
 		  }
 		  this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
@@ -51,16 +52,17 @@ public class ant : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
 	{
-	  this.animator.SetTrigger("throw");
-      GameObject child = gameObject.transform.GetChild(0).gameObject;
-      Destroy(child);
-      Instantiate(foodProjectile,gameObject.transform.position,Quaternion.identity).GetComponent<SpriteRenderer>().sprite = foodProjectileSprite;
+        this.animator.SetTrigger("throw");
+        GameObject child = gameObject.transform.GetChild(0).gameObject;
+        Destroy(child);
+        Instantiate(foodProjectile,gameObject.transform.position,Quaternion.identity).GetComponent<SpriteRenderer>().sprite = foodProjectileSprite;
 
-	  if(queenAnimator != null) {
-	    queenAnimator.SetTrigger("beginEating");
-	  }
-	  movementSpeed = 0;
-	  throwingStartTime = Time.time;
+        if(queenAnimator != null) {
+            queenAnimator.SetTrigger("beginEating");
+            gameObject.GetComponents<AudioSource>()[0].Play();
+        }
+        movementSpeed = 0;
+        throwingStartTime = Time.time;
 	}
 
 	void walk() {
