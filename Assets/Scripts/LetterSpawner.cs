@@ -8,6 +8,7 @@ public class LetterSpawner : MonoBehaviour
     public GameObject letterPrefab;
     public float minIntervalRange;
     public float maxIntervalRange;
+    private int score = 0;
 
 
     private string[] letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "L", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
@@ -34,10 +35,11 @@ public class LetterSpawner : MonoBehaviour
         int random = Random.Range(0, lettersPool.Count - 1);
         string currLetter = lettersPool[random];
         lettersPool.RemoveAt(random);
-
+       
         string path = "Textures/Alphabet/" + currLetter;
 
         newLetter.GetComponent<Letter>().letterText = currLetter;
+        newLetter.GetComponent<Letter>().speed = newLetter.GetComponent<Letter>().speed + ((score + 1) * 0.1f);
 
         letterRenderer.sprite = (Sprite) Resources.Load(path, typeof(Sprite));
 
@@ -50,5 +52,10 @@ public class LetterSpawner : MonoBehaviour
     {
         lettersPool = letters.ToList<string>();
     }
+
+    public void setScore(int score) {
+     this.score = score;
+    }
+
 
 }

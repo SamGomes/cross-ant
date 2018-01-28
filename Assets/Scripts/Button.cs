@@ -6,6 +6,7 @@ public class Button : MonoBehaviour {
 
     public GameObject gameManager;
     public string buttonCode;
+    public string xboxCode;
 
     private bool clicked;
 

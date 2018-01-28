@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: sd
 --- !u!222 &19847080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 75445754}
   buttonCode: x
+  xboxCode: 
 --- !u!65 &52753741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -338,6 +339,11 @@ MonoBehaviour:
   timePanel: {fileID: 130794679}
   reqPanel: {fileID: 19847077}
   Spawner: {fileID: 320422555}
+  LetterSpawners:
+  - {fileID: 1171528325}
+  - {fileID: 1821892090}
+  - {fileID: 1220411138}
+  - {fileID: 999129413}
   currWord: 
   currTargetWord: 
   timeLeft: 120
@@ -830,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 75445754}
   buttonCode: v
+  xboxCode: 
 --- !u!65 &721371471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1365,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 75445754}
   buttonCode: c
+  xboxCode: 
 --- !u!65 &1234651807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1730,6 +1738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 75445754}
   buttonCode: z
+  xboxCode: 
 --- !u!54 &1806194784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1913,7 +1922,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: f4c0d7bc86ce4e746944ccdd01207fcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

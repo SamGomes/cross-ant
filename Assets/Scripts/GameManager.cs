@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject reqPanel;
 
     public GameObject Spawner;
+    public GameObject[] LetterSpawners;
+
 
     public string currWord;
     public string currTargetWord;
@@ -67,7 +69,11 @@ public class GameManager : MonoBehaviour
             if (currWord.CompareTo(currTargetWord) == 0)
             {
                 score += currTargetWord.Length;
-                timeLeft += currTargetWord.Length*2;
+                timeLeft += currTargetWord.Length*4;
+                foreach (GameObject LetterSpawner in LetterSpawners)
+                {
+                  LetterSpawner.GetComponent<LetterSpawner>().setScore(score);   
+                }
                 antSpawner spawner = Spawner.GetComponent<antSpawner>();
                 spawner.spawnAnt(currTargetWord);
                 changeTargetWord();
