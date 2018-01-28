@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject hpPanel;
     public GameObject displayPanel;
     public GameObject scorePanel;
+    public GameObject timePanel;
     public GameObject reqPanel;
 
     public GameObject Spawner;
@@ -16,15 +18,20 @@ public class GameManager : MonoBehaviour
     public string currWord;
     public string currTargetWord;
 
+    public float timeLeft;
 
-    private int lifes;
+
+    private int lives;
     private int score;
     private string[] targetWords = { "CAKE", "PIE", "APPLE" , "PIZZA" , "CROISSANT" , "BANANA" , "DONUT", "CHERRY", "XMASCOOKIES" , "KIWI", "QUICHE", "MANGO", "FISH", "VANILLA", "JELLY" };
 
     // Use this for initialization
     void Start()
     {
-        lifes = 3;
+        InvokeRepeating("decrementTimeLeft", 0.0f, 1.0f);
+
+        timeLeft = 30.0f;
+        lives = 3;
 
         DisplayPanel display = displayPanel.GetComponent<DisplayPanel>();
         
@@ -37,26 +44,38 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         resultPanel.GetComponent<UnityEngine.UI.Text>().text = "Word: "+ currWord;
-        hpPanel.GetComponent<UnityEngine.UI.Text>().text = "Lifes: "+ lifes;
+        hpPanel.GetComponent<UnityEngine.UI.Text>().text = "Lifes: "+ lives;
         scorePanel.GetComponent<UnityEngine.UI.Text>().text = "Score: "+ score;
+        timePanel.GetComponent<UnityEngine.UI.Text>().text = "Time: "+ timeLeft;
 
         currWord = currWord.ToUpper();
 
+        if(timeLeft <= 0.0f || lives < 1)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
         if (!currTargetWord.Contains(currWord))
         {
-            die();
+            hurt();
         }
         else
         {
             if (currWord.CompareTo(currTargetWord) == 0)
             {
                 score += currTargetWord.Length;
+                timeLeft += currTargetWord.Length*2;
                 antSpawner spawner = Spawner.GetComponent<antSpawner>();
                 spawner.spawnAnt();
                 changeTargetWord();
 
             }
         }
+    }
+
+    void decrementTimeLeft()
+    {
+        timeLeft--;
     }
 
     void changeTargetWord()
@@ -68,14 +87,9 @@ public class GameManager : MonoBehaviour
         reqPanel.GetComponent<reqScript>().updateRequirement(currTargetWord);
     }
 
-    void die()
+    void hurt()
     {
-        if (lifes == 1)
-        {
-            //close game (switch scene to game over scene)
-            Debug.Log("Game Over");
-        }
-        lifes--;
+        lives--;
         currWord = "";
     }
 }

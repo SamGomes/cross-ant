@@ -11,8 +11,7 @@ public class Button : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -27,6 +26,7 @@ public class Button : MonoBehaviour {
         }
 
     }
+
 
     void OnTriggerEnter(Collider otherObject)
     {

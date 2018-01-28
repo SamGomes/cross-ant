@@ -10,7 +10,7 @@ public class LetterSpawner : MonoBehaviour
     public float maxIntervalRange;
 
 
-    public string[] letters; // = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "L", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+    private string[] letters = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "L", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
     private List<string> lettersPool;
 
     // Use this for initialization
