@@ -17,10 +17,12 @@ public class antSpawner : MonoBehaviour {
 		
 	}
 
-	public void spawnAnt(){
-     GameObject ant = Instantiate(antPrefab, this.transform.position, Quaternion.identity);
-	 ant antScript = ant.GetComponent<ant>();
-	 Animator queenAnimator  = QueenAnt.GetComponent<Animator>();
-	 antScript.setQueenAnimator(queenAnimator);
-	}
+	public void spawnAnt(string currTargetWord){
+        GameObject ant = Instantiate(antPrefab, this.transform.position, Quaternion.identity);
+        ant antScript = ant.GetComponent<ant>();
+        Animator queenAnimator  = QueenAnt.GetComponent<Animator>();
+        antScript.setQueenAnimator(queenAnimator);
+
+        antScript.setCargo(currTargetWord);
+    }
 }

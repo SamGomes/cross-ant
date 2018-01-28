@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ant : MonoBehaviour {
 
+    public GameObject foodProjectile;
+    private Sprite foodProjectileSprite;
+
     Animator animator;
 	Animator queenAnimator;
 	public float movementSpeed = 100;
@@ -38,9 +41,21 @@ public class ant : MonoBehaviour {
 	  }
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+    public void setCargo(string currTargetWord)
+    {
+        GameObject child = gameObject.transform.GetChild(0).gameObject;
+        SpriteRenderer childRenderer = child.GetComponent<SpriteRenderer>();
+        childRenderer.sprite = (Sprite)Resources.Load("Textures/FoodItems/" + currTargetWord, typeof(Sprite));
+        foodProjectileSprite = childRenderer.sprite;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
 	{
 	  this.animator.SetTrigger("throw");
+      GameObject child = gameObject.transform.GetChild(0).gameObject;
+      Destroy(child);
+      Instantiate(foodProjectile,gameObject.transform.position,Quaternion.identity).GetComponent<SpriteRenderer>().sprite = foodProjectileSprite;
+
 	  if(queenAnimator != null) {
 	    queenAnimator.SetTrigger("beginEating");
 	  }

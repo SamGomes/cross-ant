@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
                 score += currTargetWord.Length;
                 timeLeft += currTargetWord.Length*2;
                 antSpawner spawner = Spawner.GetComponent<antSpawner>();
-                spawner.spawnAnt();
+                spawner.spawnAnt(currTargetWord);
                 changeTargetWord();
 
             }
