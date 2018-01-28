@@ -17,7 +17,7 @@ public class DisplayPanel : MonoBehaviour {
 
     public void setCurrWord(string currWord)
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite) Resources.Load("Textures/FoodItems/" + currWord, typeof(Sprite));
+        GameObject.Find("food").GetComponent<SpriteRenderer>().sprite = (Sprite) Resources.Load("Textures/FoodItems/" + currWord, typeof(Sprite));
         this.currWord = currWord;
     }
 }

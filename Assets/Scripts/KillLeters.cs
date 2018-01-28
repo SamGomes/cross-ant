@@ -6,7 +6,6 @@ public class KillLeters : MonoBehaviour {
 
     void OnTriggerEnter(Collider otherObject)
     {
-        Debug.Log("killLeters");
         Destroy(otherObject.GetComponent<SpriteRenderer>().gameObject);
         Destroy(otherObject.gameObject);
     }

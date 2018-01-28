@@ -33,7 +33,6 @@ public class Button : MonoBehaviour {
         if (otherObject.GetComponent<Letter>()== null){
             return;
         }
-        Debug.Log(otherObject.GetComponent<Letter>());
         if (this.clicked)
         {
             otherObject.gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 1.0f);

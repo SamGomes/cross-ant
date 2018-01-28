@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject hpPanel;
     public GameObject displayPanel;
     public GameObject scorePanel;
+    public GameObject reqPanel;
 
     public GameObject Spawner;
 
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
         
         currTargetWord = targetWords[0];
         display.setCurrWord(currTargetWord);
-
+        reqPanel.GetComponent<reqScript>().updateRequirement(currTargetWord);
     }
 
     // Update is called once per frame
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("spawnLetter", random, random);
         currTargetWord = targetWords[random];
         displayPanel.GetComponent<DisplayPanel>().setCurrWord(currTargetWord);
+        reqPanel.GetComponent<reqScript>().updateRequirement(currTargetWord);
     }
 
     void die()
