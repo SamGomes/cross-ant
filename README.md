@@ -1,6 +1,6 @@
 # crossAnt
 
-![game logo](https://github.com/SamGomes/crossAnt/ReadmeImages/logo.png)
+![game logo](ReadmeImages/logo.png)
 
 Imagine you are an ant and you want to maintain the colony stable. To achieve your objective you have to serve the :crown: *Queen Ant* :crown: any type of food she likes. In order to get some food you got to use 4 colored buttons to press the letters of the requested food in an evergoing and challenge increasing rolling letter soup.  
 
@@ -18,4 +18,4 @@ The game was developed at Global Game Jam '18. The main theme to follow was *tra
 
 
 ## Screenshot:
-![screenshot](https://github.com/SamGomes/crossAnt/ReadmeImages/screenshot.png)
+![screenshot](ReadmeImages/screenshot.png)
