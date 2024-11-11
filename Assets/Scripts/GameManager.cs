@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         resultPanel.GetComponent<UnityEngine.UI.Text>().text = "Word: "+ currWord;
-        hpPanel.GetComponent<UnityEngine.UI.Text>().text = "Lifes: "+ lives;
+        hpPanel.GetComponent<UnityEngine.UI.Text>().text = "Lives: "+ lives;
         scorePanel.GetComponent<UnityEngine.UI.Text>().text = "Score: "+ score;
         timePanel.GetComponent<UnityEngine.UI.Text>().text = "Time: "+ timeLeft;
 
